@@ -1,6 +1,11 @@
 package com.ganesh.roomdbandroid
 
+import androidx.room.Database
 import androidx.room.RoomDatabase
 
-abstract class ContactDatabase :RoomDatabase() {
+@Database(
+    entities = [Contact::class], version = 1
+)
+abstract class ContactDatabase : RoomDatabase() {
+    abstract val dao: ContactDao
 }
